@@ -10,61 +10,63 @@ public class playerController : MonoBehaviour
     public float maxX = 2.4f;
     private float rotationThreshold = 10.0f;
     private bool isTouchingGround;
-    private float timer;
+    public float fallThreshold = -8.0f;
 
     void Update()
     {
 
         float rotationZ = Input.acceleration.x * 90; // Telefonun yatay eksen etkileþimi
-        if (Mathf.Abs(rotationZ) > rotationThreshold)
+        bool moveRight = false;
+        bool moveLeft = false;
+
+        if (Input.GetKey(KeyCode.D))
         {
-            // Telefon saða döndürüldü
-            if (rotationZ > 0)
+            moveRight = true;
+        }
+        else if (Input.GetKey(KeyCode.A))
+        {
+            moveLeft = true;
+        }
+
+        // Telefon saða döndürüldü veya sað tuþa basýldý
+        if (rotationZ > rotationThreshold || moveRight)
+        {
+            // X ekseni sýnýrlarýný kontrol et
+            if (transform.position.x < maxX)
             {
-                // X ekseni sýnýrlarýný kontrol et
-                if (transform.position.x < maxX)
-                {
-                    transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
-                }
-                else
-                {
-                    // Ekranýn sað kenarýndan çýktýðýnda, sol kenardan tekrar gir
-                    transform.position = new Vector3(minX, transform.position.y, transform.position.z);
-                }
+                transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
             }
-            // Telefon sola döndürüldü
             else
             {
-                // X ekseni sýnýrlarýný kontrol et
-                if (transform.position.x > minX)
-                {
-                    transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
-                }
-                else
-                {
-                    // Ekranýn sol kenarýndan çýktýðýnda, sað kenardan tekrar gir
-                    transform.position = new Vector3(maxX, transform.position.y, transform.position.z);
-                }
+                // Ekranýn sað kenarýndan çýktýðýnda, sol kenardan tekrar gir
+                transform.position = new Vector3(minX, transform.position.y, transform.position.z);
             }
         }
-        PlayerDestroy();
+        // Telefon sola döndürüldü veya sol tuþa basýldý
+        else if (rotationZ < -rotationThreshold || moveLeft)
+        {
+            // X ekseni sýnýrlarýný kontrol et
+            if (transform.position.x > minX)
+            {
+                transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
+            }
+            else
+            {
+                // Ekranýn sol kenarýndan çýktýðýnda, sað kenardan tekrar gir
+                transform.position = new Vector3(maxX, transform.position.y, transform.position.z);
+            }
+        }
+
+        // Ölüm durumunu kontrol et
+        if (transform.position.y < fallThreshold && !isTouchingGround)
+        {
+            Die();
+        }
     }
 
-    private void PlayerDestroy()
+    private void Die()
     {
-        if (isTouchingGround)
-        {
-            timer = 0f;
-        }
-        else
-        {
-            timer += Time.deltaTime;
-
-            if (timer >= 10f)
-            {
-                SceneManager.LoadScene(2);
-            }
-        }
+        SceneManager.LoadScene(2);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -91,9 +93,3 @@ public class playerController : MonoBehaviour
         }
     }
 }
-
-
-
-
-
-

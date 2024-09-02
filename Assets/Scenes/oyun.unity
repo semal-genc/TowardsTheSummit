@@ -214,7 +214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zemin: {fileID: 4146726900715354142, guid: 3f4724aaecc190346b2fd26136d51258, type: 3}
-  zeminSayisi: 1000
+  zeminSayisi: 1500
   zeminGenislik: 2.3
   minY: 2.7
   maxY: 2.9
@@ -816,6 +816,7 @@ MonoBehaviour:
   moveSpeed: 4
   minX: -3
   maxX: 3
+  fallThreshold: -6
 --- !u!212 &1096079715
 SpriteRenderer:
   m_ObjectHideFlags: 0
