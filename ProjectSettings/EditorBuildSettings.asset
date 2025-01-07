@@ -6,13 +6,13 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/anaMenu.unity
+    path: Assets/Game/Scenes/anaMenu.unity
     guid: 59bfc5fe1deed6742b1fdc7331bfe61e
   - enabled: 1
-    path: Assets/Scenes/oyun.unity
+    path: Assets/Game/Scenes/oyun.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/skor.unity
+    path: Assets/Game/Scenes/skor.unity
     guid: 35a62ebfddb550d4dbdf6a5f3507a2b8
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 6f3130c42258980488f8eb3a23a13c51, type: 2}

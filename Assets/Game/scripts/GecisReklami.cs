@@ -2,13 +2,14 @@ using GoogleMobileAds.Api;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GecisReklami : MonoBehaviour
 {
     
-
+//ca-app-pub-3940256099942544/1033173712
 #if UNITY_EDITOR
-    string _adUnitID = "ca-app-pub-3940256099942544/1033173712";
+    string _adUnitID = "ca-app-pub-4239141501894599/3865423540";
 #elif UNITY_IPHONE
         string _adUnitID = "ca-app-pub-3940256099942544/4411468910";
 #else
@@ -16,6 +17,7 @@ public class GecisReklami : MonoBehaviour
 #endif
 
     InterstitialAd _GecisReklami;
+    public string levelName;
 
     void Start()
     {
@@ -80,6 +82,7 @@ public class GecisReklami : MonoBehaviour
         ad.OnAdFullScreenContentClosed += () =>
         {
             Debug.Log("Geçiþ reklamý kapatýldý.");
+            SceneManager.LoadScene(levelName);
             GecisReklamiOlustur();
         };
 
@@ -101,6 +104,7 @@ public class GecisReklami : MonoBehaviour
         else
         {
             Debug.Log("Geçiþ reklamý henüz hazýr deðil");
+            SceneManager.LoadScene(levelName);
         }
 
     }

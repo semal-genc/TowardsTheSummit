@@ -294,7 +294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zemin: {fileID: 4146726900715354142, guid: 3f4724aaecc190346b2fd26136d51258, type: 3}
-  zeminSayisi: 1500
+  zeminSayisi: 1000
   zeminGenislik: 2.3
   minY: 2.7
   maxY: 2.9
@@ -308,8 +308,9 @@ GameObject:
   m_Component:
   - component: {fileID: 199573262}
   - component: {fileID: 199573261}
+  - component: {fileID: 199573263}
   m_Layer: 0
-  m_Name: yonetici
+  m_Name: Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -344,6 +345,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &199573263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 199573260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7062960c34fb26940aaf88052bc2f730, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &310426396
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,7 +392,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 28}
+  m_AnchoredPosition: {x: 0, y: 125}
   m_SizeDelta: {x: 500, y: 200}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &310426398
@@ -404,7 +417,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: b2bf0b16a47a0d5418d3293b5b7607fa, type: 3}
-    m_FontSize: 133
+    m_FontSize: 120
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -1117,7 +1130,7 @@ Canvas:
   m_GameObject: {fileID: 2134379109}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
