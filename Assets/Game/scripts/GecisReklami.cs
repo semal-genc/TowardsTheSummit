@@ -9,7 +9,7 @@ public class GecisReklami : MonoBehaviour
     
 //ca-app-pub-3940256099942544/1033173712
 #if UNITY_EDITOR
-    string _adUnitID = "ca-app-pub-4239141501894599/3865423540";
+    string _adUnitID = "ca-app-pub-4239141501894599/2190665287";
 #elif UNITY_IPHONE
         string _adUnitID = "ca-app-pub-3940256099942544/4411468910";
 #else

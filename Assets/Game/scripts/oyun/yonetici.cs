@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class yonetici : MonoBehaviour
@@ -10,6 +11,11 @@ public class yonetici : MonoBehaviour
 
     private void Start()
     {
+        if (SceneManager.GetActiveScene().buildIndex == 1) // Eðer baþlangýç sahnesindeyse
+        {
+            skorSayisi = 0;
+        }
+
         // Geri sayýmýn baþladýðýný doðrulama
         if (countdownText != null)
         {

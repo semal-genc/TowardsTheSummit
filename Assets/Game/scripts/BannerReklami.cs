@@ -7,7 +7,7 @@ public class BannerReklami : MonoBehaviour
 {
 //ca-app-pub-3940256099942544/6300978111
 #if UNITY_EDITOR
-    string _adUnitID = "ca-app-pub-4239141501894599/2190665287";
+    string _adUnitID = "ca-app-pub-4239141501894599/3865423540";
 #elif UNITY_IPHONE
         string _adUnitID = "ca-app-pub-3940256099942544/2934735716";
 #else
